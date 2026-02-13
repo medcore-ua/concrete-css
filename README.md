@@ -4,11 +4,11 @@ Concrete is a lightweight, atomic CSS framework inspired by brutalist design pri
 
 ## Philosophy
 
-- **Utility-First**: Compose complex components from simple, single-purpose utilities
-- **Token-Driven**: All values derived from a centralized design token system
-- **Brutalist by Default**: Strong borders, monospace fonts, high contrast
-- **Framework-Agnostic**: Works with React, PHP, vanilla HTML, or any tech stack
-- **Zero Magic Numbers**: Every value comes from the configuration
+- **Utility-First**: Compose complex components from simple, single-purpose utilities.
+- **Token-Driven**: All values derived from a centralized design token system.
+- **Brutalist by Default**: Strong borders, monospace fonts, high contrast.
+- **Framework-Agnostic**: Works with React, PHP, vanilla HTML, or any tech stack.
+- **Zero Magic Numbers**: Every value comes from the configuration.
 
 ## Quick Start
 
