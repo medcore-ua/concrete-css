@@ -1,0 +1,39 @@
+/*!
+ * Concrete CSS Framework v1.0.0
+ * Copyright 2026
+ * Licensed under MIT
+ */
+
+// =============================================================================
+// CONFIGURATION LAYER
+// Import all configuration, tokens, and variables first
+// =============================================================================
+
+@use 'abstracts/functions' as *;
+@use 'abstracts/variables' as *;
+@use 'abstracts/tokens' as *;
+@use 'abstracts/mixins' as *;
+
+// =============================================================================
+// BASE LAYER
+// Reset and foundational styles
+// =============================================================================
+
+@use 'base/reset';
+@use 'base/typography';
+
+// =============================================================================
+// UTILITIES LAYER
+// The core utility class generator
+// =============================================================================
+
+@use 'utilities/core';
+
+// =============================================================================
+// COMPONENTS (OPTIONAL)
+// Uncomment to include optional pre-built components
+// =============================================================================
+
+// @use 'components/buttons';
+// @use 'components/forms';
+// @use 'components/cards';
