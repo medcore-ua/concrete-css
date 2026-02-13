@@ -13,7 +13,7 @@ Concrete is a lightweight, atomic CSS framework inspired by brutalist design pri
 ## Quick Start
 
 ```bash
-npm install concrete-css
+npm install @medcore-ua/concrete-css
 ```
 
 ```scss
