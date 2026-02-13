@@ -32,11 +32,11 @@ npm install @medcore-ua/concrete-css
 
 ## Features
 
-- **~50KB** base (before purge)
-- **Responsive** breakpoint system
-- **Customizable** via Sass variables
-- **Tree-shakeable** with PurgeCSS
-- **TypeScript** autocomplete support (coming soon)
+- **~50KB** base (before purge).
+- **Responsive** breakpoint system.
+- **Customizable** via Sass variables.
+- **Tree-shakeable** with PurgeCSS.
+- **TypeScript** autocomplete support (coming soon).
 
 ## Core Concepts
 
