@@ -1,0 +1,55 @@
+{
+  "name": "concrete-css",
+  "version": "1.0.0",
+  "description": "A utility-first CSS framework for brutalist and minimalist interfaces",
+  "main": "dist/concrete.css",
+  "sass": "scss/main.scss",
+  "style": "dist/concrete.css",
+  "files": [
+    "dist/**/*",
+    "scss/**/*",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "sass scss/main.scss dist/concrete.css --style=expanded",
+    "build:min": "sass scss/main.scss dist/concrete.min.css --style=compressed",
+    "watch": "sass scss/main.scss dist/concrete.css --watch",
+    "dev": "npm run watch",
+    "lint": "stylelint 'scss/**/*.scss'",
+    "test": "echo \"Tests coming soon\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/concrete-css.git"
+  },
+  "keywords": [
+    "css",
+    "framework",
+    "utility-first",
+    "brutalist",
+    "atomic-css",
+    "sass",
+    "scss",
+    "design-system"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/concrete-css/issues"
+  },
+  "homepage": "https://github.com/yourusername/concrete-css#readme",
+  "devDependencies": {
+    "sass": "^1.70.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard-scss": "^13.0.0"
+  },
+  "peerDependencies": {
+    "sass": "^1.70.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
