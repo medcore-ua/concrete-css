@@ -1,0 +1,71 @@
+// =============================================================================
+// TYPOGRAPHY
+// Base typographic styles (minimal, can be overridden with utilities)
+// =============================================================================
+
+@use '../abstracts/tokens' as *;
+
+body {
+  font-family: $font-family-mono;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: $color-black;
+}
+
+// Headings (minimal styling, use utilities for full control)
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+// Code elements
+code,
+kbd,
+samp,
+pre {
+  font-family: $font-family-mono;
+  font-size: 0.875em;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+// Inline code
+code {
+  padding: 0.125rem 0.25rem;
+  border: 1px solid currentColor;
+}
+
+// Strong and emphasis
+strong,
+b {
+  font-weight: 700;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+// Small text
+small {
+  font-size: 0.875em;
+}
+
+// Subscript and superscript
+sub,
+sup {
+  font-size: 0.75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
