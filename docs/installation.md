@@ -3,13 +3,13 @@
 ## NPM Installation (Recommended)
 
 ```bash
-npm install concrete-css
+npm install @medcore-ua/concrete-css
 ```
 
 ## Yarn
 
 ```bash
-yarn add concrete-css
+yarn add @medcore-ua/concrete-css
 ```
 
 ## CDN (Quick Start)
@@ -17,7 +17,7 @@ yarn add concrete-css
 For prototyping or simple projects:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/concrete-css/dist/concrete.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@medcore-ua/concrete-css/dist/concrete.min.css">
 ```
 
 ## Using with Sass
