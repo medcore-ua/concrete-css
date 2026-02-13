@@ -10,7 +10,7 @@ concrete-framework/
 ├── README.md                      # Main documentation
 ├── CHANGELOG.md                   # Version history
 ├── CONTRIBUTING.md                # Contribution guidelines
-├── LICENSE                        # MIT License
+├── LICENSE                        # CSSM Unlimited License v2.0
 ├── package.json                   # NPM configuration
 ├── .gitignore                     # Git ignore rules
 │
@@ -59,7 +59,7 @@ concrete-framework/
 - **package.json**: NPM package configuration, scripts, dependencies
 - **CHANGELOG.md**: Version history following Keep a Changelog format
 - **CONTRIBUTING.md**: Guidelines for contributors
-- **LICENSE**: MIT License
+- **LICENSE**: CSSM Unlimited License v2.0
 - **.gitignore**: Files to exclude from Git
 
 ### SCSS Directory (`/scss`)
