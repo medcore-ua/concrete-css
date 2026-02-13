@@ -110,10 +110,16 @@
       $prefix: map.get($config, 'prefix');
       $values: map.get($config, 'values');
       $is-important: map.get($config, 'important');
-      $important-flag: if($is-important or $enable-important, !important, null);
+      $important-flag: null;
+      @if $is-important or $enable-important {
+        $important-flag: !important;
+      }
       
       @each $key, $value in $values {
-        $class-name: if($key == 'default', $prefix, '#{$prefix}-#{$key}');
+        $class-name: $prefix;
+        @if $key != 'default' {
+          $class-name: '#{$prefix}-#{$key}';
+        }
         
         // Escape the colon for CSS validity
         .#{$state}\:#{$class-name}:#{$state} {
@@ -136,7 +142,10 @@
 @mixin generate-directional($prefix, $property, $values) {
   @each $dir-key, $dir-value in $directions {
     @each $size-key, $size-value in $values {
-      $class-name: if($dir-key == '', '#{$prefix}-#{$size-key}', '#{$prefix}#{$dir-key}-#{$size-key}');
+      $class-name: '#{$prefix}#{$dir-key}-#{$size-key}';
+      @if $dir-key == '' {
+        $class-name: '#{$prefix}-#{$size-key}';
+      }
       
       .#{$class-name} {
         @if $dir-key == '' {
@@ -166,7 +175,10 @@
   @each $dir-key, $dir-value in $directions {
     @each $size-key, $size-value in $values {
       @if meta.type-of($size-value) == 'number' and $size-value != 0 and $size-value != auto {
-        $class-name: if($dir-key == '', '-m-#{$size-key}', '-m#{$dir-key}-#{$size-key}');
+        $class-name: '-m#{$dir-key}-#{$size-key}';
+        @if $dir-key == '' {
+          $class-name: '-m-#{$size-key}';
+        }
         
         .#{$class-name} {
           @if $dir-key == '' {
