@@ -1,0 +1,406 @@
+// =============================================================================
+// UTILITIES API
+// Master configuration defining all utility classes to generate
+// =============================================================================
+
+@use 'sass:map';
+@use '../abstracts/tokens' as *;
+
+// This map is the single source of truth for utility generation
+$utilities: (
+  
+  // ==========================================================================
+  // LAYOUT
+  // ==========================================================================
+  
+  'display': (
+    'prefix': '',
+    'values': (
+      'block': block,
+      'inline-block': inline-block,
+      'inline': inline,
+      'flex': flex,
+      'inline-flex': inline-flex,
+      'grid': grid,
+      'inline-grid': inline-grid,
+      'table': table,
+      'hidden': none
+    ),
+    'responsive': true,
+    'states': false
+  ),
+  
+  // ==========================================================================
+  // FLEXBOX
+  // ==========================================================================
+  
+  'flex-direction': (
+    'prefix': 'flex',
+    'values': (
+      'row': row,
+      'row-reverse': row-reverse,
+      'col': column,
+      'col-reverse': column-reverse
+    ),
+    'responsive': true,
+    'states': false
+  ),
+  
+  'flex-wrap': (
+    'prefix': 'flex',
+    'values': (
+      'wrap': wrap,
+      'wrap-reverse': wrap-reverse,
+      'nowrap': nowrap
+    ),
+    'responsive': true,
+    'states': false
+  ),
+  
+  'justify-content': (
+    'prefix': 'justify',
+    'values': (
+      'start': flex-start,
+      'end': flex-end,
+      'center': center,
+      'between': space-between,
+      'around': space-around,
+      'evenly': space-evenly
+    ),
+    'responsive': true,
+    'states': false
+  ),
+  
+  'align-items': (
+    'prefix': 'items',
+    'values': (
+      'start': flex-start,
+      'end': flex-end,
+      'center': center,
+      'baseline': baseline,
+      'stretch': stretch
+    ),
+    'responsive': true,
+    'states': false
+  ),
+  
+  'align-self': (
+    'prefix': 'self',
+    'values': (
+      'auto': auto,
+      'start': flex-start,
+      'end': flex-end,
+      'center': center,
+      'stretch': stretch
+    ),
+    'responsive': true,
+    'states': false
+  ),
+  
+  'flex-grow': (
+    'prefix': 'grow',
+    'values': (
+      '0': 0,
+      '1': 1
+    ),
+    'responsive': true,
+    'states': false
+  ),
+  
+  'flex-shrink': (
+    'prefix': 'shrink',
+    'values': (
+      '0': 0,
+      '1': 1
+    ),
+    'responsive': true,
+    'states': false
+  ),
+  
+  // ==========================================================================
+  // GRID
+  // ==========================================================================
+  
+  'grid-template-columns': (
+    'prefix': 'grid-cols',
+    'values': (
+      '1': repeat(1, minmax(0, 1fr)),
+      '2': repeat(2, minmax(0, 1fr)),
+      '3': repeat(3, minmax(0, 1fr)),
+      '4': repeat(4, minmax(0, 1fr)),
+      '6': repeat(6, minmax(0, 1fr)),
+      '12': repeat(12, minmax(0, 1fr)),
+      'none': none
+    ),
+    'responsive': true,
+    'states': false
+  ),
+  
+  'gap': (
+    'prefix': 'gap',
+    'values': $spacing,
+    'responsive': true,
+    'states': false
+  ),
+  
+  // ==========================================================================
+  // COLORS
+  // ==========================================================================
+  
+  'background-color': (
+    'prefix': 'bg',
+    'values': $colors,
+    'responsive': false,
+    'states': true
+  ),
+  
+  'color': (
+    'prefix': 'text',
+    'values': $colors,
+    'responsive': false,
+    'states': true
+  ),
+  
+  'border-color': (
+    'prefix': 'border',
+    'values': $colors,
+    'responsive': false,
+    'states': true
+  ),
+  
+  // ==========================================================================
+  // BORDERS
+  // ==========================================================================
+  
+  'border-width': (
+    'prefix': 'border',
+    'values': $border-widths,
+    'responsive': false,
+    'states': false
+  ),
+  
+  'border-style': (
+    'prefix': 'border',
+    'values': (
+      'solid': solid,
+      'dashed': dashed,
+      'dotted': dotted,
+      'none': none
+    ),
+    'responsive': false,
+    'states': false
+  ),
+  
+  'border-radius': (
+    'prefix': 'rounded',
+    'values': $border-radius,
+    'responsive': false,
+    'states': false
+  ),
+  
+  // ==========================================================================
+  // SIZING
+  // ==========================================================================
+  
+  'width': (
+    'prefix': 'w',
+    'values': map.merge($spacing, (
+      'full': 100%,
+      'screen': 100vw,
+      'min': min-content,
+      'max': max-content,
+      'fit': fit-content
+    )),
+    'responsive': true,
+    'states': false
+  ),
+  
+  'height': (
+    'prefix': 'h',
+    'values': map.merge($spacing, (
+      'full': 100%,
+      'screen': 100vh,
+      'min': min-content,
+      'max': max-content,
+      'fit': fit-content
+    )),
+    'responsive': true,
+    'states': false
+  ),
+  
+  'max-width': (
+    'prefix': 'max-w',
+    'values': $max-widths,
+    'responsive': true,
+    'states': false
+  ),
+  
+  // ==========================================================================
+  // TYPOGRAPHY
+  // ==========================================================================
+  
+  'font-family': (
+    'prefix': 'font',
+    'values': (
+      'mono': $font-family-mono,
+      'sans': $font-family-sans,
+      'serif': $font-family-serif
+    ),
+    'responsive': false,
+    'states': false
+  ),
+  
+  'font-size': (
+    'prefix': 'text',
+    'values': $font-sizes,
+    'responsive': true,
+    'states': false
+  ),
+  
+  'font-weight': (
+    'prefix': 'font',
+    'values': $font-weights,
+    'responsive': false,
+    'states': false
+  ),
+  
+  'line-height': (
+    'prefix': 'leading',
+    'values': $line-heights,
+    'responsive': false,
+    'states': false
+  ),
+  
+  'letter-spacing': (
+    'prefix': 'tracking',
+    'values': $letter-spacing,
+    'responsive': false,
+    'states': false
+  ),
+  
+  'text-align': (
+    'prefix': 'text',
+    'values': (
+      'left': left,
+      'center': center,
+      'right': right,
+      'justify': justify
+    ),
+    'responsive': true,
+    'states': false
+  ),
+  
+  'text-transform': (
+    'prefix': '',
+    'values': (
+      'uppercase': uppercase,
+      'lowercase': lowercase,
+      'capitalize': capitalize,
+      'normal-case': none
+    ),
+    'responsive': false,
+    'states': false
+  ),
+  
+  'text-decoration': (
+    'prefix': '',
+    'values': (
+      'underline': underline,
+      'line-through': line-through,
+      'no-underline': none
+    ),
+    'responsive': false,
+    'states': true
+  ),
+  
+  // ==========================================================================
+  // EFFECTS
+  // ==========================================================================
+  
+  'opacity': (
+    'prefix': 'opacity',
+    'values': $opacity,
+    'responsive': false,
+    'states': true
+  ),
+  
+  'box-shadow': (
+    'prefix': 'shadow',
+    'values': $shadows,
+    'responsive': false,
+    'states': true
+  ),
+  
+  // ==========================================================================
+  // POSITIONING
+  // ==========================================================================
+  
+  'position': (
+    'prefix': '',
+    'values': (
+      'static': static,
+      'fixed': fixed,
+      'absolute': absolute,
+      'relative': relative,
+      'sticky': sticky
+    ),
+    'responsive': true,
+    'states': false
+  ),
+  
+  'z-index': (
+    'prefix': 'z',
+    'values': (
+      '0': 0,
+      '10': 10,
+      '20': 20,
+      '30': 30,
+      '40': 40,
+      '50': 50,
+      'auto': auto
+    ),
+    'responsive': false,
+    'states': false
+  ),
+  
+  // ==========================================================================
+  // OVERFLOW
+  // ==========================================================================
+  
+  'overflow': (
+    'prefix': 'overflow',
+    'values': (
+      'auto': auto,
+      'hidden': hidden,
+      'visible': visible,
+      'scroll': scroll
+    ),
+    'responsive': true,
+    'states': false
+  ),
+  
+  'overflow-x': (
+    'prefix': 'overflow-x',
+    'values': (
+      'auto': auto,
+      'hidden': hidden,
+      'visible': visible,
+      'scroll': scroll
+    ),
+    'responsive': true,
+    'states': false
+  ),
+  
+  'overflow-y': (
+    'prefix': 'overflow-y',
+    'values': (
+      'auto': auto,
+      'hidden': hidden,
+      'visible': visible,
+      'scroll': scroll
+    ),
+    'responsive': true,
+    'states': false
+  )
+  
+) !default;
