@@ -1,0 +1,53 @@
+// =============================================================================
+// GLOBAL CONFIGURATION VARIABLES
+// Control framework behavior and features
+// =============================================================================
+
+// Framework prefix (empty by default, but can be set to namespace classes)
+$prefix: '' !default;
+
+// Enable/disable features
+$enable-responsive: true !default;
+$enable-hover-states: true !default;
+$enable-focus-states: true !default;
+$enable-negative-margins: true !default;
+$enable-important: false !default;
+
+// Responsive breakpoint names (must match keys in $breakpoints map)
+$breakpoint-names: ('sm', 'md', 'lg', 'xl', '2xl') !default;
+
+// State modifiers to generate
+$state-modifiers: (
+  'hover',
+  'focus',
+  'active',
+  'disabled'
+) !default;
+
+// Direction maps for spacing utilities
+$directions: (
+  '': '',           // all sides
+  't': '-top',      // top
+  'r': '-right',    // right
+  'b': '-bottom',   // bottom
+  'l': '-left',     // left
+  'x': '-inline',   // horizontal (left + right)
+  'y': '-block'     // vertical (top + bottom)
+) !default;
+
+// CSS custom properties mode (experimental)
+$use-css-variables: false !default;
+
+// Z-index management
+$z-index-levels: (
+  'behind': -1,
+  'base': 0,
+  'dropdown': 1000,
+  'sticky': 1020,
+  'fixed': 1030,
+  'modal-backdrop': 1040,
+  'modal': 1050,
+  'popover': 1060,
+  'tooltip': 1070,
+  'notification': 1080
+) !default;
