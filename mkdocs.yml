@@ -1,0 +1,85 @@
+site_name: Concrete CSS
+site_description: A lightweight, atomic CSS framework inspired by brutalist design principles
+site_url: https://medcore-ua.github.io/concrete-css
+
+repo_name: medcore-ua/concrete-css
+repo_url: https://github.com/medcore-ua/concrete-css
+edit_uri: edit/main/docs/
+
+copyright: Copyright &copy; 2025 - 2026 Medcore
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - navigation.tabs
+    - navigation.footer
+    - content.code.copy
+    - content.code.annotate
+    - content.code.select
+    - content.tooltips
+    - content.action.edit
+    - content.action.view
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: pink
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: pink
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Core Utilities: utilities.md
+  - Customization: customization.md
+  - Migration: migration.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: datetime
+  - git-committers:
+      repository: medcore-ua/concrete-css
+      branch: main
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/medcore-ua
+    - icon: fontawesome/brands/facebook
+      link: https://www.facebook.com/medcore.ua
+    - icon: fontawesome/solid/envelope
+      link: mailto:hi@medcore.pp.ua
