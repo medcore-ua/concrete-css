@@ -66,8 +66,9 @@
         @each $key, $value in $values {
           $class-name: if($key == 'default', $prefix, '#{$prefix}-#{$key}');
           
-          // Escape the colon for CSS validity
-          .#{$breakpoint}\:#{$class-name} {
+          // Handle numeric prefix (2xl) - escape properly
+          $bp-escaped: if(str-slice($breakpoint, 1, 1) == '2', '\\32 ', $breakpoint);
+          .#{$bp-escaped}\:#{$class-name} {
             #{$property}: $value $important-flag;
           }
         }
