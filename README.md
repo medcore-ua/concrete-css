@@ -1,7 +1,5 @@
 # Concrete CSS Framework
 
-**A utility-first CSS framework for brutalist and minimalist interfaces**
-
 Concrete is a lightweight, atomic CSS framework inspired by brutalist design principles. It provides low-level utility classes that let you build completely custom designs without fighting the framework.
 
 ## Philosophy
