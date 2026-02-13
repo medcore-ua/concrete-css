@@ -1,0 +1,100 @@
+// =============================================================================
+// CSS RESET
+// Modern, minimal reset for consistent cross-browser rendering
+// =============================================================================
+
+// Box sizing
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// Remove default margins and padding
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// Root element
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+// Body
+body {
+  min-height: 100vh;
+  line-height: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Media elements
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// Form elements
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+// Remove button styling
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+// Typography
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+// Lists
+ol,
+ul {
+  list-style: none;
+}
+
+// Tables
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// Links
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+// Accessibility
+[disabled] {
+  cursor: not-allowed;
+}
+
+// Hidden
+[hidden] {
+  display: none !important;
+}
