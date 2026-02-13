@@ -12,9 +12,9 @@
     "README.md"
   ],
   "scripts": {
-    "build": "sass scss/main.scss dist/concrete.css --style=expanded",
-    "build:min": "sass scss/main.scss dist/concrete.min.css --style=compressed",
-    "watch": "sass scss/main.scss dist/concrete.css --watch",
+    "build": "npx sass scss/main.scss dist/concrete.css --style=expanded",
+    "build:min": "npx sass scss/main.scss dist/concrete.min.css --style=compressed",
+    "watch": "npx sass scss/main.scss dist/concrete.css --watch",
     "dev": "npm run watch",
     "lint": "stylelint 'scss/**/*.scss'",
     "test": "echo \"Tests coming soon\" && exit 0"
