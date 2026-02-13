@@ -49,8 +49,14 @@
       // Responsive margin
       @each $dir-key, $dir-value in $directions {
         @each $size-key, $size-value in $spacing {
-          $class-name: if($dir-key == '', 'm-#{$size-key}', 'm#{$dir-key}-#{$size-key}');
-          $bp-escaped: if(string.slice($breakpoint, 1, 1) == '2', '\\32 ', $breakpoint);
+          $class-name: 'm#{$dir-key}-#{$size-key}';
+          @if $dir-key == '' {
+            $class-name: 'm-#{$size-key}';
+          }
+          $bp-escaped: $breakpoint;
+          @if string.slice($breakpoint, 1, 1) == '2' {
+            $bp-escaped: '\\32 ';
+          }
           
           .#{$bp-escaped}\:#{$class-name} {
             @if $dir-key == '' {
@@ -71,8 +77,14 @@
       // Responsive padding
       @each $dir-key, $dir-value in $directions {
         @each $size-key, $size-value in $spacing {
-          $class-name: if($dir-key == '', 'p-#{$size-key}', 'p#{$dir-key}-#{$size-key}');
-          $bp-escaped: if(string.slice($breakpoint, 1, 1) == '2', '\\32 ', $breakpoint);
+          $class-name: 'p#{$dir-key}-#{$size-key}';
+          @if $dir-key == '' {
+            $class-name: 'p-#{$size-key}';
+          }
+          $bp-escaped: $breakpoint;
+          @if string.slice($breakpoint, 1, 1) == '2' {
+            $bp-escaped: '\\32 ';
+          }
           
           .#{$bp-escaped}\:#{$class-name} {
             @if $dir-key == '' {

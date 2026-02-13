@@ -29,10 +29,16 @@
       $responsive: true;
     }
     
-    $important-flag: if($is-important or $enable-important, !important, null);
+    $important-flag: null;
+    @if $is-important or $enable-important {
+      $important-flag: !important;
+    }
     
     @each $key, $value in $values {
-      $class-name: if($key == 'default', $prefix, '#{$prefix}-#{$key}');
+      $class-name: $prefix;
+      @if $key != 'default' {
+        $class-name: '#{$prefix}-#{$key}';
+      }
       
       .#{$class-name} {
         #{$property}: $value $important-flag;
@@ -62,13 +68,22 @@
         $prefix: map.get($config, 'prefix');
         $values: map.get($config, 'values');
         $is-important: map.get($config, 'important');
-$important-flag: if($is-important or $enable-important, !important, null);
+        $important-flag: null;
+        @if $is-important or $enable-important {
+          $important-flag: !important;
+        }
         
         @each $key, $value in $values {
-          $class-name: if($key == 'default', $prefix, '#{$prefix}-#{$key}');
+          $class-name: $prefix;
+          @if $key != 'default' {
+            $class-name: '#{$prefix}-#{$key}';
+          }
           
           // Handle numeric prefix (2xl) - escape properly
-          $bp-escaped: if(string.slice($breakpoint, 1, 1) == '2', '\\32 ', $breakpoint);
+          $bp-escaped: $breakpoint;
+          @if string.slice($breakpoint, 1, 1) == '2' {
+            $bp-escaped: '\\32 ';
+          }
           .#{$bp-escaped}\:#{$class-name} {
             #{$property}: $value $important-flag;
           }
