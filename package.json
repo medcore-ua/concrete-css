@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/concrete-css.git"
+    "url": "https://github.com/medcore-ua/concrete-css.git"
   },
   "keywords": [
     "css",
@@ -36,9 +36,9 @@
   "author": "Serhii Cherneha",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
-    "url": "https://github.com/yourusername/concrete-css/issues"
+    "url": "https://github.com/medcore-ua/concrete-css/issues"
   },
-  "homepage": "https://github.com/yourusername/concrete-css#readme",
+  "homepage": "https://github.com/medcore-ua/concrete-css#readme",
   "devDependencies": {
     "sass": "^1.70.0",
     "stylelint": "^16.0.0",
