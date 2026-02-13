@@ -4,11 +4,11 @@ Concrete is a lightweight, atomic CSS framework inspired by brutalist design pri
 
 ## Philosophy
 
-- **Utility-First**: Compose complex components from simple, single-purpose utilities.
-- **Token-Driven**: All values derived from a centralized design token system.
-- **Brutalist by Default**: Strong borders, monospace fonts, high contrast.
-- **Framework-Agnostic**: Works with React, PHP, vanilla HTML, or any tech stack.
-- **Zero Magic Numbers**: Every value comes from the configuration.
+- **Utility-First**: Build complex user interfaces by combining simple, single-purpose utility classes that do one thing well.
+- **Token-Driven**: All design values like colors, spacing, and typography come from a centralized design token system for consistency.
+- **Brutalist by Default**: The framework embraces brutalist aesthetics with strong borders, monospace fonts, and high contrast visuals.
+- **Framework-Agnostic**: This CSS framework works seamlessly with React, PHP, vanilla HTML, or any technology stack you prefer.
+- **Zero Magic Numbers**: Every value in the framework traces back to configuration tokens with no hidden or arbitrary numbers.
 
 ## Quick Start
 
@@ -32,11 +32,11 @@ npm install @medcore-ua/concrete-css
 
 ## Features
 
-- **~50KB** base (before purge).
-- **Responsive** breakpoint system.
-- **Customizable** via Sass variables.
-- **Tree-shakeable** with PurgeCSS.
-- **TypeScript** autocomplete support (coming soon).
+- **~50KB** base file size before any optimization or purging of unused styles.
+- **Responsive** mobile-first breakpoint system that scales from small screens to large desktops.
+- **Customizable** through Sass variables and configuration maps to match your design system.
+- **Tree-shakeable** when used with PurgeCSS to remove all unused styles in production builds.
+- **TypeScript** autocomplete support is planned for future releases.
 
 ## Core Concepts
 
