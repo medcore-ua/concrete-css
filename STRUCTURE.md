@@ -270,14 +270,14 @@ When published, users get:
 
 ```
 node_modules/concrete-css/
-├── package.json
-├── README.md
-├── LICENSE
-├── scss/              # For Sass users
-│   └── ...
-└── dist/              # For direct CSS import
-    ├── concrete.css
-    └── concrete.min.css
++-- package.json
++-- README.md
++-- LICENSE
++-- scss/                          # For Sass users
+|   \-- ...
+\-- dist/                          # For direct CSS import
+    +-- concrete.css
+    \-- concrete.min.css
 ```
 
 ## Import Patterns
