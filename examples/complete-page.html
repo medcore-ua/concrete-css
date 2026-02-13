@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concrete CSS - Complete Example</title>
+  <link rel="stylesheet" href="../dist/concrete.css">
+</head>
+<body class="bg-gray-100 font-mono">
+  
+  <!-- Top Strip -->
+  <div class="border-b-2 px-4 py-2 bg-white uppercase text-xs flex justify-between gap-2 flex-wrap">
+    <div class="font-black">Emergency: +1-800-CLINIC</div>
+    <div class="flex gap-4">
+      <span class="border-1 px-2 py-1">Open 24/7</span>
+      <span class="border-1 px-2 py-1 border-success text-success">Available</span>
+    </div>
+  </div>
+  
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b-4 bg-white">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+      
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 border-4 flex items-center justify-center font-black bg-gray-100">
+          CM
+        </div>
+        <div class="uppercase text-xs leading-tight">
+          <div class="font-black">Clinic Manager</div>
+          <div>Medical Center</div>
+        </div>
+      </div>
+      
+      <!-- Navigation -->
+      <nav class="hidden md:flex gap-6 text-xs uppercase tracking-wide">
+        <a href="#" class="border-b-2 border-transparent hover:border-black">Home</a>
+        <a href="#" class="border-b-2 border-transparent hover:border-black">Services</a>
+        <a href="#" class="border-b-2 border-transparent hover:border-black">Doctors</a>
+        <a href="#" class="border-b-2 border-transparent hover:border-black">Contact</a>
+      </nav>
+      
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden border-2 px-3 py-2 uppercase text-xs">
+        Menu
+      </button>
+      
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
+  <section class="border-b-4 bg-gray-100">
+    <div class="max-w-5xl mx-auto px-4 py-8 md:py-12">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        
+        <!-- Hero Content -->
+        <div>
+          <p class="uppercase text-xs tracking-widest mb-3">Welcome to Our Clinic</p>
+          <h1 class="text-4xl md:text-5xl uppercase font-black leading-tight mb-4">
+            Your Health is Our Priority
+          </h1>
+          <p class="text-base mb-6 leading-relaxed">
+            Providing exceptional medical care with state-of-the-art facilities 
+            and experienced professionals.
+          </p>
+          
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap gap-3">
+            <button class="px-6 py-3 bg-black text-white border-4 border-black uppercase text-sm font-bold hover:bg-gray-800">
+              Book Appointment
+            </button>
+            <button class="px-6 py-3 bg-white text-black border-4 border-black uppercase text-sm font-bold hover:bg-gray-100">
+              Our Services
+            </button>
+          </div>
+          
+          <!-- Meta Info -->
+          <div class="mt-8 border-t-1 pt-4">
+            <div class="text-xs uppercase flex justify-between py-2 border-b-1">
+              <span class="opacity-75">Opening Hours</span>
+              <span class="font-bold">24/7 Emergency</span>
+            </div>
+            <div class="text-xs uppercase flex justify-between py-2 border-b-1">
+              <span class="opacity-75">Location</span>
+              <span class="font-bold">Downtown District</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Hero Image -->
+        <div class="border-4 bg-white p-4">
+          <div class="border-2 bg-gray-200 h-64 flex items-center justify-center text-sm uppercase">
+            Featured Image
+          </div>
+          <div class="border-t-1 mt-3 pt-3 text-xs opacity-75">
+            Modern medical facility
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <!-- Services Section -->
+  <section class="border-b-4">
+    <div class="max-w-5xl mx-auto px-4 py-12">
+      
+      <!-- Section Header -->
+      <div class="mb-8">
+        <p class="uppercase text-xs tracking-widest mb-2">What We Offer</p>
+        <h2 class="text-3xl uppercase font-black">Our Services</h2>
+      </div>
+      
+      <!-- Services Grid -->
+      <div class="grid md:grid-cols-3 gap-4">
+        
+        <!-- Service Card -->
+        <div class="border-2 bg-white p-6">
+          <h3 class="text-lg uppercase font-black mb-3">General Medicine</h3>
+          <p class="text-sm mb-4 leading-relaxed">
+            Comprehensive primary care for all your health needs.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="border-1 px-2 py-1 text-xs uppercase">Checkups</span>
+            <span class="border-1 px-2 py-1 text-xs uppercase">Treatment</span>
+          </div>
+        </div>
+        
+        <!-- Service Card -->
+        <div class="border-2 bg-white p-6">
+          <h3 class="text-lg uppercase font-black mb-3">Emergency Care</h3>
+          <p class="text-sm mb-4 leading-relaxed">
+            24/7 emergency services with rapid response teams.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="border-1 px-2 py-1 text-xs uppercase border-error text-error">24/7</span>
+            <span class="border-1 px-2 py-1 text-xs uppercase">Critical</span>
+          </div>
+        </div>
+        
+        <!-- Service Card -->
+        <div class="border-2 bg-white p-6">
+          <h3 class="text-lg uppercase font-black mb-3">Specialized Care</h3>
+          <p class="text-sm mb-4 leading-relaxed">
+            Expert specialists in cardiology, neurology, and more.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="border-1 px-2 py-1 text-xs uppercase">Cardiology</span>
+            <span class="border-1 px-2 py-1 text-xs uppercase">Neurology</span>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <!-- Doctors Section -->
+  <section class="border-b-4 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4 py-12">
+      
+      <div class="mb-8">
+        <p class="uppercase text-xs tracking-widest mb-2">Meet Our Team</p>
+        <h2 class="text-3xl uppercase font-black">Our Doctors</h2>
+      </div>
+      
+      <div class="grid md:grid-cols-4 gap-4">
+        
+        <!-- Doctor Card -->
+        <div class="border-2 bg-white p-4 grid grid-cols-[72px_1fr] gap-3">
+          <div class="border-4 bg-gray-200 h-18 w-18 flex items-center justify-center text-xs uppercase">
+            DR
+          </div>
+          <div>
+            <h3 class="uppercase font-black text-sm mb-1">Dr. Smith</h3>
+            <p class="text-xs mb-2 font-bold">Cardiologist</p>
+            <div class="flex flex-wrap gap-1">
+              <span class="border-1 px-2 py-0 text-xs">Heart</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Repeat for more doctors -->
+        <div class="border-2 bg-white p-4 grid grid-cols-[72px_1fr] gap-3">
+          <div class="border-4 bg-gray-200 h-18 w-18 flex items-center justify-center text-xs uppercase">
+            DR
+          </div>
+          <div>
+            <h3 class="uppercase font-black text-sm mb-1">Dr. Johnson</h3>
+            <p class="text-xs mb-2 font-bold">Neurologist</p>
+            <div class="flex flex-wrap gap-1">
+              <span class="border-1 px-2 py-0 text-xs">Brain</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="border-2 bg-white p-4 grid grid-cols-[72px_1fr] gap-3">
+          <div class="border-4 bg-gray-200 h-18 w-18 flex items-center justify-center text-xs uppercase">
+            DR
+          </div>
+          <div>
+            <h3 class="uppercase font-black text-sm mb-1">Dr. Williams</h3>
+            <p class="text-xs mb-2 font-bold">Pediatrician</p>
+            <div class="flex flex-wrap gap-1">
+              <span class="border-1 px-2 py-0 text-xs">Children</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="border-2 bg-white p-4 grid grid-cols-[72px_1fr] gap-3">
+          <div class="border-4 bg-gray-200 h-18 w-18 flex items-center justify-center text-xs uppercase">
+            DR
+          </div>
+          <div>
+            <h3 class="uppercase font-black text-sm mb-1">Dr. Brown</h3>
+            <p class="text-xs mb-2 font-bold">Surgeon</p>
+            <div class="flex flex-wrap gap-1">
+              <span class="border-1 px-2 py-0 text-xs">Surgery</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="border-t-4 bg-white">
+    <div class="max-w-5xl mx-auto px-4 py-6">
+      <div class="flex flex-wrap justify-between gap-4 text-xs uppercase">
+        <div>© 2026 Clinic Manager</div>
+        <div class="flex gap-4">
+          <a href="#" class="hover:underline">Privacy</a>
+          <a href="#" class="hover:underline">Terms</a>
+          <a href="#" class="hover:underline">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+</html>
