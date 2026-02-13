@@ -1,0 +1,86 @@
+// =============================================================================
+// SASS HELPER FUNCTIONS
+// Utility functions for the framework generator
+// =============================================================================
+
+/// Remove units from a value
+/// @param {Number} $value - Value to strip units from
+/// @return {Number} - Unitless value
+@function strip-unit($value) {
+  @if type-of($value) == 'number' and not unitless($value) {
+    @return $value / ($value * 0 + 1);
+  }
+  @return $value;
+}
+
+/// Convert px to rem
+/// @param {Number} $px - Pixel value
+/// @param {Number} $base [16px] - Base font size
+/// @return {Number} - rem value
+@function px-to-rem($px, $base: 16px) {
+  @return (strip-unit($px) / strip-unit($base)) * 1rem;
+}
+
+/// Generate negative values for a map
+/// @param {Map} $map - Original map
+/// @return {Map} - Map with negative values added
+@function generate-negatives($map) {
+  $result: $map;
+  @each $key, $value in $map {
+    @if type-of($value) == 'number' and $value != 0 {
+      $result: map-merge($result, ('-#{$key}': -$value));
+    }
+  }
+  @return $result;
+}
+
+/// Escape special characters for class names
+/// @param {String} $string - String to escape
+/// @return {String} - Escaped string
+@function escape-class-name($string) {
+  $string: str-replace($string, '/', '\\/');
+  $string: str-replace($string, ':', '\\:');
+  $string: str-replace($string, '.', '\\.');
+  $string: str-replace($string, '%', '\\%');
+  @return $string;
+}
+
+/// String replace helper
+/// @param {String} $string - String to search in
+/// @param {String} $search - String to search for
+/// @param {String} $replace - Replacement string
+/// @return {String} - Modified string
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + 
+            str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}
+
+/// Check if a value is a CSS length
+/// @param {*} $value - Value to check
+/// @return {Boolean}
+@function is-length($value) {
+  @return type-of($value) == 'number' and 
+          (unit($value) == 'px' or 
+           unit($value) == 'rem' or 
+           unit($value) == 'em' or
+           unit($value) == '%' or
+           unitless($value));
+}
+
+/// Get deeply nested map value
+/// @param {Map} $map - Map to search
+/// @param {List} $keys - Keys to traverse
+/// @return {*} - Value at path or null
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+    @if $map == null {
+      @return null;
+    }
+  }
+  @return $map;
+}
