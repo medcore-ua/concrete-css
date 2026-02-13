@@ -41,7 +41,7 @@
   "homepage": "https://github.com/medcore-ua/concrete-css#readme",
   "devDependencies": {
     "sass": "^1.69.0",
-    "stylelint": "^16.0.0",
+    "stylelint": "^15.0.0",
     "stylelint-config-standard-scss": "^13.0.0"
   },
   "peerDependencies": {
