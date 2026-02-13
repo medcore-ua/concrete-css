@@ -1,7 +1,7 @@
 {
   "name": "concrete-css",
   "version": "1.0.0",
-  "description": "A utility-first CSS framework for brutalist and minimalist interfaces",
+  "description": "A utility-first CSS framework for brutalist and minimalist interfaces.",
   "main": "dist/concrete.css",
   "sass": "scss/main.scss",
   "style": "dist/concrete.css",
