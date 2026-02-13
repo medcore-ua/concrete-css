@@ -5,50 +5,41 @@ This document explains the complete repository structure and how everything fits
 ## Directory Tree
 
 ```
-concrete-framework/
-│
-├── README.md                      # Main documentation
-├── CHANGELOG.md                   # Version history
-├── CONTRIBUTING.md                # Contribution guidelines
-├── LICENSE                        # CSSM Unlimited License v2.0
-├── package.json                   # NPM configuration
-├── .gitignore                     # Git ignore rules
-│
-├── scss/                          # Source Sass files (the heart of the framework)
-│   ├── abstracts/                # Functions, mixins, variables, tokens
-│   │   ├── _functions.scss       # Helper functions (px-to-rem, strip-unit, etc.)
-│   │   ├── _variables.scss       # Global Sass variables (flags, config)
-│   │   ├── _tokens.scss          # Design tokens (colors, spacing, etc.)
-│   │   └── _mixins.scss          # Utility generator mixins
-│   │
-│   ├── base/                     # Foundation styles
-│   │   ├── _reset.scss           # CSS reset/normalize
-│   │   └── _typography.scss      # Base typography rules
-│   │
-│   ├── utilities/                # Utility class generators
-│   │   ├── _api.scss             # Master configuration map
-│   │   └── _core.scss            # Main generator loop
-│   │
-│   └── main.scss                 # Entry point (imports everything)
-│
-├── themes/                        # Example theme files
-│   └── clinic-theme.scss         # Clinic manager theme extraction
-│
-├── dist/                          # Compiled CSS (generated, don't edit)
-│   ├── concrete.css              # Full build
-│   └── concrete.min.css          # Minified build
-│
-├── docs/                          # Documentation
-│   ├── installation.md           # How to install and set up
-│   ├── utilities.md              # Complete utility reference
-│   ├── customization.md          # How to customize the framework
-│   └── migration.md              # Migration guide from existing projects
-│
-└── examples/                      # Working examples
-    ├── complete-page.html        # Full page example
-    ├── components/               # Component examples
-    └── migration/                # Before/after migration examples
-
+concrete-css/
++-- README.md                       # Main documentation
++-- CHANGELOG.md                    # Version history
++-- CONTRIBUTING.md                 # Contribution guidelines
++-- LICENSE                         # CSSM Unlimited License v2.0
++-- package.json                    # NPM configuration
++-- .gitignore                      # Git ignore rules
++-- scss/                           # Source Sass files (the heart of the framework)
+|   +-- abstracts/                  # Functions, mixins, variables, tokens
+|   |   +-- _functions.scss         # Helper functions (px-to-rem, strip-unit, etc.)
+|   |   +-- _variables.scss         # Global Sass variables (flags, config)
+|   |   +-- _tokens.scss            # Design tokens (colors, spacing, etc.)
+|   |   \-- _mixins.scss            # Utility generator mixins
+|   +-- base/                       # Foundation styles
+|   |   +-- _reset.scss             # CSS reset/normalize
+|   |   \-- _typography.scss        # Base typography rules
+|   +-- utilities/                  # Utility class generators
+|   |   +-- _api.scss               # Master configuration map
+|   |   \-- _core.scss              # Main generator loop
+|   \-- main.scss                   # Entry point (imports everything)
++-- themes/                         # Example theme files
+|   \-- clinic-theme.scss           # Clinic manager theme extraction
++-- dist/                           # Compiled CSS (generated, don't edit)
+|   +-- concrete.css                # Full build
+|   \-- concrete.min.css            # Minified build
++-- docs/                           # Documentation
+|   +-- index.md                    # Home page
+|   +-- installation.md             # How to install and set up
+|   +-- utilities.md                # Complete utility reference
+|   +-- customization.md            # How to customize the framework
+|   \-- migration.md                # Migration guide from existing projects
+\-- examples/                       # Working examples
+    +-- complete-page.html          # Full page example
+    +-- components/                 # Component examples
+    \-- migration/                  # Before/after migration examples
 ```
 
 ## File Descriptions
