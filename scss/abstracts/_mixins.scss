@@ -1,0 +1,170 @@
+// =============================================================================
+// UTILITY GENERATOR MIXINS
+// The core engine that generates utility classes
+// =============================================================================
+
+@use 'sass:map';
+@use 'sass:string';
+@use 'functions' as *;
+@use 'variables' as *;
+@use 'tokens' as *;
+
+// =============================================================================
+// MAIN UTILITY GENERATOR
+// Generates a complete set of utilities from a configuration map
+// =============================================================================
+
+/// Generate utility classes from configuration
+/// @param {Map} $utilities-map - Configuration map
+@mixin generate-utilities($utilities-map) {
+  @each $property, $config in $utilities-map {
+    $prefix: map.get($config, 'prefix');
+    $values: map.get($config, 'values');
+    $is-important: map.get($config, 'important');
+    $responsive: map.get($config, 'responsive');
+    
+    // Default responsive to true if not specified
+    @if $responsive == null {
+      $responsive: true;
+    }
+    
+    $important-flag: if($is-important or $enable-important, !important, null);
+    
+    @each $key, $value in $values {
+      $class-name: if($key == 'default', $prefix, '#{$prefix}-#{$key}');
+      
+      .#{$class-name} {
+        #{$property}: $value $important-flag;
+      }
+    }
+  }
+}
+
+// =============================================================================
+// RESPONSIVE WRAPPER
+// Wraps utilities in media queries
+// =============================================================================
+
+/// Generate responsive variants of utilities
+/// @param {String} $breakpoint - Breakpoint name
+/// @param {Map} $utilities-map - Utilities configuration
+@mixin responsive-utilities($breakpoint, $utilities-map) {
+  $bp-value: map.get($breakpoints, $breakpoint);
+  
+  @media (min-width: $bp-value) {
+    @each $property, $config in $utilities-map {
+      // Skip if responsive is disabled for this utility
+      $responsive: map.get($config, 'responsive');
+      @if $responsive == false {
+        // Skip this utility
+      } @else {
+        $prefix: map.get($config, 'prefix');
+        $values: map.get($config, 'values');
+        $is-important: map.get($config, 'important');
+        $important-flag: if($is-important or $enable-important, !important, null);
+        
+        @each $key, $value in $values {
+          $class-name: if($key == 'default', $prefix, '#{$prefix}-#{$key}');
+          
+          // Escape the colon for CSS validity
+          .#{$breakpoint}\:#{$class-name} {
+            #{$property}: $value $important-flag;
+          }
+        }
+      }
+    }
+  }
+}
+
+// =============================================================================
+// STATE MODIFIERS (hover, focus, etc.)
+// =============================================================================
+
+/// Generate state variants of utilities
+/// @param {String} $state - State name (hover, focus, active, disabled)
+/// @param {Map} $utilities-map - Utilities configuration
+@mixin state-utilities($state, $utilities-map) {
+  @each $property, $config in $utilities-map {
+    // Skip if states are disabled for this utility
+    $allow-states: map.get($config, 'states');
+    @if $allow-states == false {
+      // Skip this utility
+    } @else {
+      $prefix: map.get($config, 'prefix');
+      $values: map.get($config, 'values');
+      $is-important: map.get($config, 'important');
+      $important-flag: if($is-important or $enable-important, !important, null);
+      
+      @each $key, $value in $values {
+        $class-name: if($key == 'default', $prefix, '#{$prefix}-#{$key}');
+        
+        // Escape the colon for CSS validity
+        .#{$state}\:#{$class-name}:#{$state} {
+          #{$property}: $value $important-flag;
+        }
+      }
+    }
+  }
+}
+
+// =============================================================================
+// DIRECTIONAL UTILITIES (margin, padding)
+// Handles top, right, bottom, left, x, y variants
+// =============================================================================
+
+/// Generate directional spacing utilities
+/// @param {String} $prefix - Utility prefix (m, p)
+/// @param {String} $property - CSS property (margin, padding)
+/// @param {Map} $values - Spacing values
+@mixin generate-directional($prefix, $property, $values) {
+  @each $dir-key, $dir-value in $directions {
+    @each $size-key, $size-value in $values {
+      $class-name: if($dir-key == '', '#{$prefix}-#{$size-key}', '#{$prefix}#{$dir-key}-#{$size-key}');
+      
+      .#{$class-name} {
+        @if $dir-key == '' {
+          #{$property}: $size-value;
+        } @else if $dir-key == 'x' {
+          #{$property}-left: $size-value;
+          #{$property}-right: $size-value;
+        } @else if $dir-key == 'y' {
+          #{$property}-top: $size-value;
+          #{$property}-bottom: $size-value;
+        } @else {
+          #{$property}#{$dir-value}: $size-value;
+        }
+      }
+    }
+  }
+}
+
+// =============================================================================
+// NEGATIVE MARGIN HELPER
+// Generates negative margin utilities
+// =============================================================================
+
+/// Generate negative margin utilities
+/// @param {Map} $values - Spacing values
+@mixin generate-negative-margins($values) {
+  @each $dir-key, $dir-value in $directions {
+    @each $size-key, $size-value in $values {
+      @if type-of($size-value) == 'number' and $size-value != 0 and $size-value != auto {
+        $class-name: if($dir-key == '', '-m-#{$size-key}', '-m#{$dir-key}-#{$size-key}');
+        
+        .#{$class-name} {
+          @if $dir-key == '' {
+            margin: -$size-value;
+          } @else if $dir-key == 'x' {
+            margin-left: -$size-value;
+            margin-right: -$size-value;
+          } @else if $dir-key == 'y' {
+            margin-top: -$size-value;
+            margin-bottom: -$size-value;
+          } @else {
+            margin#{$dir-value}: -$size-value;
+          }
+        }
+      }
+    }
+  }
+}
