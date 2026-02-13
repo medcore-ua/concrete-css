@@ -28,10 +28,10 @@
       $responsive: true;
     }
     
-    $important-flag: if($is-important or $enable-important, !important, null);
+    $important-flag: if.sass($is-important or $enable-important, !important, null);
     
     @each $key, $value in $values {
-      $class-name: if($key == 'default', $prefix, '#{$prefix}-#{$key}');
+      $class-name: if.sass($key == 'default', $prefix, '#{$prefix}-#{$key}');
       
       .#{$class-name} {
         #{$property}: $value $important-flag;
@@ -61,13 +61,13 @@
         $prefix: map.get($config, 'prefix');
         $values: map.get($config, 'values');
         $is-important: map.get($config, 'important');
-        $important-flag: if($is-important or $enable-important, !important, null);
+$important-flag: if.sass($is-important or $enable-important, !important, null);
         
         @each $key, $value in $values {
-          $class-name: if($key == 'default', $prefix, '#{$prefix}-#{$key}');
+          $class-name: if.sass($key == 'default', $prefix, '#{$prefix}-#{$key}');
           
           // Handle numeric prefix (2xl) - escape properly
-          $bp-escaped: if(str-slice($breakpoint, 1, 1) == '2', '\\32 ', $breakpoint);
+          $bp-escaped: if.sass(string.slice($breakpoint, 1, 1) == '2', '\\32 ', $breakpoint);
           .#{$bp-escaped}\:#{$class-name} {
             #{$property}: $value $important-flag;
           }
@@ -94,10 +94,10 @@
       $prefix: map.get($config, 'prefix');
       $values: map.get($config, 'values');
       $is-important: map.get($config, 'important');
-      $important-flag: if($is-important or $enable-important, !important, null);
+      $important-flag: if.sass($is-important or $enable-important, !important, null);
       
       @each $key, $value in $values {
-        $class-name: if($key == 'default', $prefix, '#{$prefix}-#{$key}');
+        $class-name: if.sass($key == 'default', $prefix, '#{$prefix}-#{$key}');
         
         // Escape the colon for CSS validity
         .#{$state}\:#{$class-name}:#{$state} {
@@ -120,7 +120,7 @@
 @mixin generate-directional($prefix, $property, $values) {
   @each $dir-key, $dir-value in $directions {
     @each $size-key, $size-value in $values {
-      $class-name: if($dir-key == '', '#{$prefix}-#{$size-key}', '#{$prefix}#{$dir-key}-#{$size-key}');
+      $class-name: if.sass($dir-key == '', '#{$prefix}-#{$size-key}', '#{$prefix}#{$dir-key}-#{$size-key}');
       
       .#{$class-name} {
         @if $dir-key == '' {
@@ -149,8 +149,8 @@
 @mixin generate-negative-margins($values) {
   @each $dir-key, $dir-value in $directions {
     @each $size-key, $size-value in $values {
-      @if type-of($size-value) == 'number' and $size-value != 0 and $size-value != auto {
-        $class-name: if($dir-key == '', '-m-#{$size-key}', '-m#{$dir-key}-#{$size-key}');
+      @if meta.type-of($size-value) == 'number' and $size-value != 0 and $size-value != auto {
+        $class-name: if.sass($dir-key == '', '-m-#{$size-key}', '-m#{$dir-key}-#{$size-key}');
         
         .#{$class-name} {
           @if $dir-key == '' {

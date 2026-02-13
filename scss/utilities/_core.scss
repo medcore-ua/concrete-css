@@ -3,6 +3,7 @@
 // The main loop that generates all utility classes
 // =============================================================================
 
+@use 'sass:string';
 @use '../abstracts/functions' as *;
 @use '../abstracts/variables' as *;
 @use '../abstracts/tokens' as *;
@@ -42,13 +43,13 @@
     @include responsive-utilities($breakpoint, $utilities);
     
     // Responsive spacing
-    $bp-value: map-get($breakpoints, $breakpoint);
+    $bp-value: map.get($breakpoints, $breakpoint);
     @media (min-width: $bp-value) {
       // Responsive margin
       @each $dir-key, $dir-value in $directions {
         @each $size-key, $size-value in $spacing {
-          $class-name: if($dir-key == '', 'm-#{$size-key}', 'm#{$dir-key}-#{$size-key}');
-          $bp-escaped: if(str-slice($breakpoint, 1, 1) == '2', '\\32 ', $breakpoint);
+          $class-name: if.sass($dir-key == '', 'm-#{$size-key}', 'm#{$dir-key}-#{$size-key}');
+          $bp-escaped: if.sass(string.slice($breakpoint, 1, 1) == '2', '\\32 ', $breakpoint);
           
           .#{$bp-escaped}\:#{$class-name} {
             @if $dir-key == '' {
@@ -69,8 +70,8 @@
       // Responsive padding
       @each $dir-key, $dir-value in $directions {
         @each $size-key, $size-value in $spacing {
-          $class-name: if($dir-key == '', 'p-#{$size-key}', 'p#{$dir-key}-#{$size-key}');
-          $bp-escaped: if(str-slice($breakpoint, 1, 1) == '2', '\\32 ', $breakpoint);
+          $class-name: if.sass($dir-key == '', 'p-#{$size-key}', 'p#{$dir-key}-#{$size-key}');
+          $bp-escaped: if.sass(string.slice($breakpoint, 1, 1) == '2', '\\32 ', $breakpoint);
           
           .#{$bp-escaped}\:#{$class-name} {
             @if $dir-key == '' {
