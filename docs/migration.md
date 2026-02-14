@@ -68,14 +68,12 @@ Create a spreadsheet:
 
 Map your old classes to new Concrete classes:
 
-```markdown
 | Old Class | New Concrete Class | Notes |
 |-----------|-------------------|-------|
 | `.container` | `.max-w-5xl mx-auto px-4` | Multi-class |
 | `.btn` | `.px-4 py-2 border-4 uppercase` | Base button |
 | `.btn--primary` | `+ bg-black text-white` | Variant |
 | `.top-strip` | Custom component | Keep as-is |
-```
 
 ## Step 4: Parallel Implementation
 
