@@ -1,0 +1,48 @@
+// =============================================================================
+// GRID HELPERS
+// Additional grid patterns not covered by utilities
+// =============================================================================
+
+@use 'sass:map';
+@use '../abstracts/variables' as *;
+@use '../abstracts/tokens' as *;
+
+// Split layouts - use with utilities like .grid.grid-cols-2
+// Example: <div class="grid md:split-main gap-4">
+
+// Grid container defaults
+.#{$prefix}grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 720px) {
+  .#{$prefix}grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .#{$prefix}grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  .#{$prefix}grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 992px) {
+  .#{$prefix}grid-3-lg {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  .#{$prefix}grid-4-lg {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .#{$prefix}grid-4-xl {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
