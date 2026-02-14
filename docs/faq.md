@@ -479,15 +479,13 @@ Check the LICENSE file for attribution requirements.
 
 - 📖 Read [Documentation](../docs)
 - 🐛 Open [GitHub Issue](https://github.com/medcore-ua/concrete-css/issues)
-- 💬 Join [Discord](https://discord.gg/concrete-css) (if available)
-- 📧 Email: support@concrete-css.dev (if available)
+- 📧 Email: hi@medcore.pp.ua
 
 ### How do I stay updated?
 
 - ⭐ Star the [GitHub repo](https://github.com/medcore-ua/concrete-css)
 - 👁️ Watch for releases
-- 📰 Follow on Twitter/X (if available)
-- 📧 Subscribe to newsletter (if available)
+- 📘 Follow on [Facebook](https://facebook.com/medcore.ua)
 
 ### Can I hire someone to help with Concrete?
 
