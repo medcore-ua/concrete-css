@@ -1,0 +1,62 @@
+// =============================================================================
+// UTILITY COMPONENTS
+// =============================================================================
+
+@use 'sass:map';
+@use '../abstracts/variables' as *;
+@use '../abstracts/tokens' as *;
+
+// Display utilities
+.#{$prefix}open {
+  display: block !important;
+}
+
+// Background utilities
+.#{$prefix}bg-alt {
+  background: $color-white;
+}
+
+.#{$prefix}bg-base {
+  background: $color-gray-100;
+}
+
+// Text utilities
+.#{$prefix}text-center {
+  text-align: center;
+}
+
+.#{$prefix}text-right {
+  text-align: right;
+}
+
+// Width utilities
+.#{$prefix}w-full {
+  width: 100%;
+}
+
+.#{$prefix}max-w-full {
+  max-width: 100%;
+}
+
+// Responsive grid helpers
+@media (min-width: 720px) {
+  .#{$prefix}grid-2-1 {
+    grid-template-columns: 2fr 1fr;
+  }
+  
+  .#{$prefix}grid-3-2 {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+@media (min-width: 850px) {
+  .#{$prefix}grid-2-3 {
+    grid-template-columns: 2fr 3fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .#{$prefix}grid-3-1 {
+    grid-template-columns: 3fr 1fr;
+  }
+}
