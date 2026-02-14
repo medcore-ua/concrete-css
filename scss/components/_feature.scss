@@ -1,0 +1,26 @@
+// =============================================================================
+// FEATURE
+// =============================================================================
+
+@use 'sass:map';
+@use '../abstracts/variables' as *;
+@use '../abstracts/tokens' as *;
+
+.#{$prefix}feature {
+  border: map.get($border-widths, '2') solid $color-black;
+  background: $color-white;
+  padding: 1.2rem;
+}
+
+.#{$prefix}feature__title {
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.#{$prefix}feature__text {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  opacity: 0.8;
+}
