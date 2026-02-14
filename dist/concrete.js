@@ -9,6 +9,7 @@
   const Concrete = {
     init: function() {
       this.initNavToggle();
+      this.initAccordion();
     },
 
     /**
@@ -37,6 +38,21 @@
             nav.classList.remove('open');
             toggle.setAttribute('aria-expanded', 'false');
           }
+        });
+      });
+    },
+
+    /**
+     * Accordion Toggle
+     */
+    initAccordion: function() {
+      const questions = document.querySelectorAll('.accordion__question');
+      
+      questions.forEach(question => {
+        question.addEventListener('click', function() {
+          const item = this.closest('.accordion-item');
+          const answer = item.querySelector('.accordion__answer');
+          answer.classList.toggle('open');
         });
       });
     }
