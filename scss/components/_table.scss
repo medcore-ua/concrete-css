@@ -1,0 +1,50 @@
+// =============================================================================
+// TABLE
+// =============================================================================
+
+@use 'sass:map';
+@use '../abstracts/variables' as *;
+@use '../abstracts/tokens' as *;
+
+.#{$prefix}table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 0.5rem;
+  border: map.get($border-widths, '1') solid $color-black;
+}
+
+.#{$prefix}data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.#{$prefix}data-table th,
+.#{$prefix}data-table td {
+  border: map.get($border-widths, '1') solid $color-black;
+  padding: 0.35rem 0.4rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.#{$prefix}data-table th {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  background: transparent;
+}
+
+.#{$prefix}data-table td a {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.#{$prefix}table-category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border-bottom: map.get($border-widths, '2') solid $color-black;
+  padding: 0.4rem 0.7rem;
+  background: $color-gray-200;
+}

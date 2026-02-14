@@ -1,0 +1,54 @@
+// =============================================================================
+// CARD
+// =============================================================================
+
+@use 'sass:map';
+@use '../abstracts/variables' as *;
+@use '../abstracts/tokens' as *;
+
+.#{$prefix}card {
+  border: map.get($border-widths, '2') solid $color-black;
+  background: $color-white;
+  padding: 0.9rem;
+}
+
+.#{$prefix}card--thick {
+  border-width: map.get($border-widths, '4');
+}
+
+.#{$prefix}card--thin {
+  border-width: map.get($border-widths, '1');
+}
+
+.#{$prefix}card__header {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border-bottom: map.get($border-widths, '1') solid $color-black;
+  padding-bottom: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.#{$prefix}card__title {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1rem;
+  margin-bottom: 0.1rem;
+}
+
+.#{$prefix}card__subtitle {
+  font-size: 0.75rem;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.#{$prefix}card__content {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.#{$prefix}card__meta {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}

@@ -1,0 +1,58 @@
+// =============================================================================
+// LIST
+// =============================================================================
+
+@use 'sass:map';
+@use '../abstracts/variables' as *;
+@use '../abstracts/tokens' as *;
+
+.#{$prefix}list-item {
+  border-bottom: map.get($border-widths, '1') solid $color-black;
+  padding: 0.55rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  font-size: 0.8rem;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.#{$prefix}list-item__name {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.#{$prefix}list-item__meta {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.#{$prefix}list-item__status {
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-top: 0.2rem;
+}
+
+.#{$prefix}fact-list {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  font-size: 0.8rem;
+}
+
+.#{$prefix}fact-list li {
+  border-top: map.get($border-widths, '1') solid $color-black;
+  padding: 0.25rem 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+}
+
+.#{$prefix}fact-list__value {
+  font-weight: 700;
+  text-align: right;
+}

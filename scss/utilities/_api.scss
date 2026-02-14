@@ -130,7 +130,13 @@ $utilities: (
       '4': repeat(4, minmax(0, 1fr)),
       '6': repeat(6, minmax(0, 1fr)),
       '12': repeat(12, minmax(0, 1fr)),
-      'none': none
+      'none': none,
+      '2-1': 2fr 1fr,
+      '3-2': 3fr 2fr,
+      '3-1': 3fr 1fr,
+      '4-1': 4fr 1fr,
+      'main': minmax(0, 2fr) minmax(260px, 1fr),
+      'main-lg': minmax(0, 4fr) minmax(320px, 2fr)
     ),
     'responsive': true,
     'states': false

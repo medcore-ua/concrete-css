@@ -1,0 +1,134 @@
+// =============================================================================
+// HERO
+// =============================================================================
+
+@use 'sass:map';
+@use '../abstracts/variables' as *;
+@use '../abstracts/tokens' as *;
+
+.#{$prefix}hero {
+  border-bottom: map.get($border-widths, '4') solid $color-black;
+  background: $color-gray-100;
+  position: relative;
+  z-index: 1;
+}
+
+.#{$prefix}hero-inner {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.75rem 0 2rem;
+  min-width: 0;
+
+  @media (min-width: 720px) {
+    grid-template-columns: minmax(0, 3fr) minmax(260px, 2.3fr);
+    align-items: stretch;
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: minmax(0, 4fr) minmax(320px, 2fr);
+    gap: 2.5rem;
+  }
+}
+
+.#{$prefix}hero-inner > * {
+  min-width: 0;
+}
+
+.#{$prefix}hero__kicker {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.75rem;
+  color: inherit;
+}
+
+.#{$prefix}hero__title {
+  font-size: clamp(1.5rem, 5vw, 2.8rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  font-weight: 900;
+}
+
+.#{$prefix}hero__subtitle {
+  font-size: 0.9rem;
+  max-width: 32rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+.#{$prefix}hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.#{$prefix}hero__meta {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  width: 100%;
+  letter-spacing: 0.1em;
+}
+
+.#{$prefix}hero__meta-item {
+  border-top: map.get($border-widths, '1') solid $color-black;
+  padding: 0.35rem 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.#{$prefix}hero__meta-label {
+  opacity: 0.7;
+}
+
+.#{$prefix}hero__meta-value {
+  font-weight: 700;
+  text-align: right;
+
+  @media (max-width: 360px) {
+    text-align: left;
+    width: 100%;
+  }
+}
+
+.#{$prefix}hero__image {
+  border: map.get($border-widths, '4') solid $color-black;
+  background: $color-white;
+  padding: 0.8rem;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 0.7rem;
+  min-width: 0;
+}
+
+.#{$prefix}hero__image-label {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  border-bottom: map.get($border-widths, '1') solid $color-black;
+  padding-bottom: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.#{$prefix}hero__image-placeholder {
+  border: map.get($border-widths, '2') solid $color-black;
+  background: repeating-linear-gradient(-45deg, #fff 0, #fff 6px, #e0e0e0 6px, #e0e0e0 12px);
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 0.7rem;
+}
+
+.#{$prefix}hero__image-caption {
+  border-top: map.get($border-widths, '1') solid $color-black;
+  padding-top: 0.35rem;
+  font-size: 0.7rem;
+  opacity: 0.8;
+}

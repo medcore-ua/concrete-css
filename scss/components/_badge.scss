@@ -1,0 +1,52 @@
+// =============================================================================
+// BADGE
+// =============================================================================
+
+@use 'sass:map';
+@use '../abstracts/variables' as *;
+@use '../abstracts/tokens' as *;
+
+.#{$prefix}badge {
+  display: inline-block;
+  padding: 0.1rem 0.4rem;
+  border: map.get($border-widths, '1') solid $color-black;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+}
+
+.#{$prefix}badge--ok {
+  border-color: $color-ok;
+  color: inherit;
+  font-weight: normal;
+}
+
+.#{$prefix}badge--alert {
+  border-color: $color-alert;
+  color: $color-alert;
+  font-weight: normal;
+}
+
+.#{$prefix}badge--success {
+  border-color: $color-success;
+  color: $color-success;
+}
+
+.#{$prefix}badge--warning {
+  border-color: $color-warning;
+  color: $color-warning;
+}
+
+.#{$prefix}badge--error {
+  border-color: $color-error;
+  color: $color-error;
+}
+
+.#{$prefix}badge--sm {
+  font-size: 0.6rem;
+  padding: 0.05rem 0.25rem;
+}
+
+.#{$prefix}badge--lg {
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+}

@@ -1,0 +1,28 @@
+// =============================================================================
+// SCHEDULE
+// =============================================================================
+
+@use 'sass:map';
+@use '../abstracts/variables' as *;
+@use '../abstracts/tokens' as *;
+
+.#{$prefix}schedule {
+  list-style: none;
+  padding: 0;
+  margin: 0.2rem 0 0;
+  font-size: 0.8rem;
+}
+
+.#{$prefix}schedule__day {
+  font-weight: 700;
+}
+
+.#{$prefix}schedule__hours {
+  float: right;
+  font-size: 0.8rem;
+
+  @media (max-width: 360px) {
+    float: none;
+    display: block;
+  }
+}
