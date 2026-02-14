@@ -10,6 +10,7 @@
     init: function() {
       this.initNavToggle();
       this.initAccordion();
+      this.initSmoothScroll();
     },
 
     /**
@@ -53,6 +54,26 @@
           const item = this.closest('.accordion-item');
           const answer = item.querySelector('.accordion__answer');
           answer.classList.toggle('open');
+        });
+      });
+    },
+
+    /**
+     * Smooth Scroll
+     */
+    initSmoothScroll: function() {
+      document.querySelectorAll('[data-scroll-target]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('data-scroll-target');
+          const target = document.querySelector(targetId);
+          
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
         });
       });
     }
