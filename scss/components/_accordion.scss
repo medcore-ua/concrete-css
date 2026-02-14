@@ -1,0 +1,44 @@
+// =============================================================================
+// ACCORDION
+// =============================================================================
+
+@use 'sass:map';
+@use '../abstracts/variables' as *;
+@use '../abstracts/tokens' as *;
+
+.#{$prefix}accordion-item {
+  border-bottom: map.get($border-widths, '1') solid $color-black;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.#{$prefix}accordion__question {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 0.6rem 0.7rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  align-items: center;
+}
+
+.#{$prefix}accordion__answer {
+  font-size: 0.8rem;
+  padding: 0 0.7rem;
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding-bottom 0.3s ease-out;
+
+  &.open {
+    max-height: 500px;
+    padding-bottom: 0.6rem;
+  }
+}
