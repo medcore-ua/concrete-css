@@ -48,14 +48,14 @@ Yes! Concrete is a complete, tested framework ready for production use. It inclu
 
 **Yes** - if you want to customize via Sass:
 ```bash
-npm install concrete-css
+npm install @medcore-ua/concrete-css
 ```
 
 ### Can I use Concrete with CDN?
 
 Yes, for prototyping:
 ```html
-<link rel="stylesheet" href="https://unpkg.com/concrete-css/dist/concrete.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@medcore-ua/concrete-css/dist/concrete.min.css">
 ```
 
 **Note**: For production, we recommend installing via npm for better performance and customization.
