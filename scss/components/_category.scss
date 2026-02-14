@@ -1,0 +1,22 @@
+// =============================================================================
+// CATEGORY LABEL
+// =============================================================================
+
+@use 'sass:map';
+@use '../abstracts/variables' as *;
+@use '../abstracts/tokens' as *;
+
+.#{$prefix}category-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border-bottom: map.get($border-widths, '2') solid $color-black;
+  padding: 0.4rem 0.7rem;
+  background: $color-gray-200;
+}
+
+.#{$prefix}category-label--light {
+  background: transparent;
+  border-bottom-width: map.get($border-widths, '1');
+}
