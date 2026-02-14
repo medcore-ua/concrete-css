@@ -1,0 +1,53 @@
+// =============================================================================
+// PANEL
+// =============================================================================
+
+@use 'sass:map';
+@use '../abstracts/variables' as *;
+@use '../abstracts/tokens' as *;
+
+.#{$prefix}panel {
+  border: map.get($border-widths, '2') solid $color-black;
+  background: $color-white;
+  padding: 0.9rem;
+}
+
+.#{$prefix}panel--thick {
+  border-width: map.get($border-widths, '4');
+}
+
+.#{$prefix}panel--thin {
+  border-width: map.get($border-widths, '1');
+}
+
+.#{$prefix}panel__header {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border-bottom: map.get($border-widths, '1') solid $color-black;
+  padding-bottom: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.#{$prefix}panel__title {
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+  border-bottom: map.get($border-widths, '1') solid $color-black;
+  padding-bottom: 0.4rem;
+}
+
+.#{$prefix}panel__content {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.#{$prefix}panel__content p {
+  margin: 0 0 0.8rem 0;
+}
+
+.#{$prefix}panel__content strong {
+  font-weight: 700;
+}
