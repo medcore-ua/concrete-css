@@ -426,7 +426,7 @@ See `CONTRIBUTING.md` for detailed guidelines. Quick start:
 
 ### I found a bug. What should I do?
 
-1. Check existing [GitHub Issues](https://github.com/yourusername/concrete-css/issues)
+1. Check existing [GitHub Issues](https://github.com/medcore-ua/concrete-css/issues)
 2. Create new issue with:
    - Clear description
    - Steps to reproduce
