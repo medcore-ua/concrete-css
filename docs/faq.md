@@ -461,15 +461,15 @@ CSSM Unlimited License v2.0 (CSSM-ULv2). See the [LICENSE](../LICENSE) file.
 
 ### Can I use Concrete in commercial projects?
 
-Yes! The license allows commercial use. See LICENSE file for details.
+Yes. The license explicitly grants the right to use the software for any purpose, including commercial, educational, or research purposes.
 
 ### Can I modify Concrete?
 
-Yes! You can modify, adapt, and create derivative works. See LICENSE for terms.
+Yes. You can study, modify, and create derivative works based on the software. However, any modified versions must be licensed under the same CSSM-ULv2 terms.
 
 ### Do I need to give credit?
 
-Check the LICENSE file for attribution requirements.
+Yes. You must maintain authorship notices and include the Author's name (Serhii Cherneha) in all copies, modified versions, and related documentation.
 
 ---
 
