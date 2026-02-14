@@ -1,0 +1,20 @@
+// =============================================================================
+// MAP
+// =============================================================================
+
+@use 'sass:map';
+@use '../abstracts/variables' as *;
+@use '../abstracts/tokens' as *;
+
+.#{$prefix}map-box {
+  border: map.get($border-widths, '2') solid $color-black;
+  background: linear-gradient(90deg, #fff 0, $color-gray-200 14px, #fff 28px);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1rem;
+}
