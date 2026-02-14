@@ -1,0 +1,55 @@
+// =============================================================================
+// PROFILE CARD
+// =============================================================================
+
+@use 'sass:map';
+@use '../abstracts/variables' as *;
+@use '../abstracts/tokens' as *;
+
+.#{$prefix}profile-card {
+  border: map.get($border-widths, '2') solid $color-black;
+  background: $color-white;
+  padding: 0.8rem;
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 0.7rem;
+}
+
+.#{$prefix}profile-card__avatar {
+  border: map.get($border-widths, '4') solid $color-black;
+  background: $color-gray-300;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  height: 72px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.#{$prefix}profile-card__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.#{$prefix}profile-card__name {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 0.85rem;
+  margin-bottom: 0.1rem;
+}
+
+.#{$prefix}profile-card__role {
+  font-size: 0.75rem;
+  margin: 0 0 0.4rem;
+  font-weight: 700;
+}
+
+.#{$prefix}profile-card__meta {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
