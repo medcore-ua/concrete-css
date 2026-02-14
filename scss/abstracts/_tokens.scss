@@ -42,6 +42,8 @@ $color-success: #0a7f2e !default;
 $color-warning: #f59e0b !default;
 $color-error: #b00020 !default;
 $color-info: #0ea5e9 !default;
+$color-ok: #0a7f2e !default;
+$color-alert: #b00020 !default;
 
 // Typography
 $font-family-mono: 'Roboto Mono', 'Courier New', monospace !default;
@@ -69,6 +71,14 @@ $spacing: (
   '24': $spacing-unit * 24,      // 96px
   '32': $spacing-unit * 32,      // 128px
   'auto': auto
+) !default;
+
+// Responsive page gutter (for container padding)
+$page-gutter: (
+  'xs': 0.75rem,
+  'sm': 1rem,
+  'md': 1.5rem,
+  'lg': 2rem
 ) !default;
 
 // =============================================================================
@@ -122,7 +132,9 @@ $colors: (
   'success': $color-success,
   'warning': $color-warning,
   'error': $color-error,
-  'info': $color-info
+  'info': $color-info,
+  'ok': $color-ok,
+  'alert': $color-alert
 ) !default;
 
 // =============================================================================
@@ -243,7 +255,7 @@ $max-widths: (
   '3xl': 48rem,    // 768px
   '4xl': 56rem,    // 896px
   '5xl': 64rem,    // 1024px
-  '6xl': 72rem,    // 1152px
+  '6xl': 70rem,    // 1120px (common max-width)
   'full': 100%,
   'screen': 100vw
 ) !default;
