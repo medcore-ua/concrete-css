@@ -1,0 +1,57 @@
+// =============================================================================
+// ARTICLE
+// =============================================================================
+
+@use 'sass:map';
+@use '../abstracts/variables' as *;
+@use '../abstracts/tokens' as *;
+
+.#{$prefix}article {
+  border: map.get($border-widths, '2') solid $color-black;
+  background: $color-white;
+  padding: 0.9rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.#{$prefix}article__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.#{$prefix}article__title {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.#{$prefix}article__date {
+  font-size: 0.7rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.#{$prefix}article__meta {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.#{$prefix}article__content {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.#{$prefix}article-detail {
+  border: map.get($border-widths, '2') solid $color-black;
+  background: $color-white;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.#{$prefix}article-detail__content {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
