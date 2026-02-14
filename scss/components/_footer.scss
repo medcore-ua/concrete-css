@@ -1,0 +1,35 @@
+// =============================================================================
+// FOOTER
+// =============================================================================
+
+@use 'sass:map';
+@use '../abstracts/variables' as *;
+@use '../abstracts/tokens' as *;
+
+.#{$prefix}footer {
+  border-top: map.get($border-widths, '4') solid $color-black;
+  background: $color-white;
+  margin-top: auto;
+  z-index: 2;
+  padding: 1.5rem map.get($page-gutter, 'sm');
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @media (min-width: 768px) {
+    padding: 1.5rem map.get($page-gutter, 'md');
+  }
+
+  @media (min-width: 1200px) {
+    padding: 1.5rem map.get($page-gutter, 'lg');
+  }
+}
+
+.#{$prefix}footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
