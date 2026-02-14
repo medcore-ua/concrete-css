@@ -380,7 +380,7 @@ See full examples in [examples/migration/](../examples/migration/)
 If you encounter issues:
 
 1. Check the [FAQ](./faq.md)
-2. Search [GitHub Issues](https://github.com/yourusername/concrete-css/issues)
+2. Search [GitHub Issues](https://github.com/medcore-ua/concrete-css/issues)
 3. Join our [Discord](https://discord.gg/concrete-css)
 4. Read migration examples in `/examples`
 
