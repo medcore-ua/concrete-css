@@ -1,53 +1,52 @@
 // =============================================================================
-// ACCORDION
+// ACCORDION UTILITIES
+// Shared styles for both native details and JS accordion
 // =============================================================================
 
 @use 'sass:map';
 @use '../abstracts/variables' as *;
 @use '../abstracts/tokens' as *;
 
-.#{$prefix}accordion-item {
-  border-bottom: map.get($border-widths, '1') solid $color-black;
-
-  &:last-child {
-    border-bottom: none;
-  }
-}
-
-.#{$prefix}accordion__question {
+// Accordion trigger (button or summary)
+.#{$prefix}accordion-trigger {
   width: 100%;
   text-align: left;
   background: transparent;
   border: none;
-  padding: 0.6rem 0.7rem;
+  padding: 0.75rem;
   font-family: inherit;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.08em;
   display: flex;
   justify-content: space-between;
-  cursor: pointer;
   align-items: center;
-}
+  cursor: pointer;
+  border-bottom: map.get($border-widths, '2') solid $color-black;
 
-.#{$prefix}accordion__answer {
-  font-size: 0.8rem;
-  padding: 0 0.7rem;
-  display: block;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out, padding-bottom 0.3s ease-out;
-
-  &.open {
-    max-height: 500px;
-    padding-bottom: 0.6rem;
+  &::-webkit-details-marker {
+    display: none;
   }
 }
 
-// =============================================================================
-// DETAILS (Native FAQ accordion)
-// =============================================================================
+// Accordion content (answer) - JS version
+.#{$prefix}accordion-content {
+  padding: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  
+  &:not(.open) {
+    display: none;
+  }
+  
+  &.open {
+    display: block;
+  }
+}
 
-details.#{$prefix}details-faq {
+// Native details wrapper - provides border between items
+details.#{$prefix}accordion {
   border: map.get($border-widths, '2') solid $color-black;
   background: $color-white;
   margin-bottom: map.get($spacing, '2');
@@ -57,36 +56,62 @@ details.#{$prefix}details-faq {
   }
 }
 
-details.#{$prefix}details-faq summary {
-  padding: 0.75rem;
-  cursor: pointer;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+// JS accordion item wrapper
+.#{$prefix}accordion-item {
+  border: map.get($border-widths, '2') solid $color-black;
+  background: $color-white;
+  margin-bottom: map.get($spacing, '2');
 
-  &::-webkit-details-marker {
-    display: none;
+  &:last-child {
+    margin-bottom: 0;
   }
+}
+
+// Native details content - border-top between trigger and content
+details.#{$prefix}accordion .#{$prefix}accordion-trigger {
+  border-bottom: none;
+}
+
+details.#{$prefix}accordion .#{$prefix}accordion-content {
+  border-top: map.get($border-widths, '2') solid $color-black;
+}
+
+// Native details - always show content when open (don't override display)
+details.#{$prefix}accordion[open] .#{$prefix}accordion-content {
+  display: block;
+}
+
+details.#{$prefix}accordion:not([open]) .#{$prefix}accordion-content {
+  display: block;
+}
+
+// Native details - hide content when not open (but still in DOM)
+details.#{$prefix}accordion:not([open]) .#{$prefix}accordion-content {
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  padding: 0 0.75rem;
+}
+
+details.#{$prefix}accordion[open] .#{$prefix}accordion-content {
+  visibility: visible;
+  height: auto;
+  overflow: visible;
+  padding: 0.75rem;
+}
+
+// Accordion icon (for both native and JS)
+.#{$prefix}accordion-icon {
+  font-weight: 900;
+  font-size: 1rem;
+  flex-shrink: 0;
 
   &::after {
     content: '+';
-    font-weight: 900;
-    font-size: 1rem;
   }
 }
 
-details.#{$prefix}details-faq[open] summary::after {
+details[open] .#{$prefix}accordion-icon::after,
+.open ~ .#{$prefix}accordion-icon::after {
   content: '−';
-}
-
-details.#{$prefix}details-faq > .#{$prefix}details-faq__content {
-  padding: 0.75rem;
-  border-top: map.get($border-widths, '2') solid $color-black;
-  font-size: 0.85rem;
-  line-height: 1.6;
 }

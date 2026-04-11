@@ -45,44 +45,55 @@
     },
 
     /**
-     * Accordion Toggle
+     * Accordion Toggle (JS-based)
+     * Works with .accordion-trigger and .accordion-content
      */
     initAccordion: function() {
-      const questions = document.querySelectorAll('.accordion__question');
+      const triggers = document.querySelectorAll('.accordion-trigger');
       
-      questions.forEach(question => {
-        question.addEventListener('click', function() {
-          const item = this.closest('.accordion-item');
-          const answer = item.querySelector('.accordion__answer');
-          const container = item.closest('[data-accordion-mode]');
-          const mode = container ? container.getAttribute('data-accordion-mode') : 'multiple';
-          
-          if (mode === 'single') {
-            const allItems = container.querySelectorAll('.accordion-item');
-            allItems.forEach(i => {
-              const a = i.querySelector('.accordion__answer');
-              if (a !== answer) a.classList.remove('open');
-            });
-            answer.classList.toggle('open');
-          } else {
-            answer.classList.toggle('open');
-          }
-        });
+      triggers.forEach(trigger => {
+        if (trigger.tagName === 'BUTTON') {
+          trigger.addEventListener('click', function() {
+            const container = this.closest('[data-accordion-mode]') || this.closest('.accordion-container');
+            const mode = container ? container.getAttribute('data-accordion-mode') : 'multiple';
+            
+            // Find the content element (next sibling or inside container)
+            let content = this.nextElementSibling;
+            if (!content || !content.classList.contains('accordion-content')) {
+              content = this.parentElement.querySelector('.accordion-content');
+            }
+            
+            if (mode === 'single') {
+              const allTriggers = container.querySelectorAll('.accordion-trigger');
+              allTriggers.forEach(t => {
+                let c = t.nextElementSibling;
+                if (!c || !c.classList.contains('accordion-content')) {
+                  c = t.parentElement.querySelector('.accordion-content');
+                }
+                if (c !== content) c.classList.remove('open');
+              });
+              content.classList.toggle('open');
+            } else {
+              content.classList.toggle('open');
+            }
+          });
+        }
       });
     },
     
     /**
      * Native Details Accordion
+     * Single mode for details elements with .accordion-trigger
      */
     initDetailsAccordion: function() {
-      document.querySelectorAll('details.details-faq').forEach(details => {
+      document.querySelectorAll('details').forEach(details => {
         details.addEventListener('toggle', function() {
           if (this.open) {
             const container = this.closest('[data-accordion-mode]');
             const mode = container ? container.getAttribute('data-accordion-mode') : 'multiple';
             
             if (mode === 'single') {
-              const all = container.querySelectorAll('details.details-faq[open]');
+              const all = container.querySelectorAll('details[open]');
               all.forEach(d => {
                 if (d !== this) d.removeAttribute('open');
               });
