@@ -43,6 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.2.0] - 2026-04-11
 
 ### Added
+- `details-faq` component for native HTML FAQ accordion
 - `text-decoration-style` utilities (solid, double, dotted, dashed, wavy)
 - Bug fix for empty prefix in utility generator
 
