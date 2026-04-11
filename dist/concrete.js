@@ -10,6 +10,7 @@
     init: function() {
       this.initNavToggle();
       this.initAccordion();
+      this.initDetailsAccordion();
       this.initSmoothScroll();
     },
 
@@ -53,7 +54,40 @@
         question.addEventListener('click', function() {
           const item = this.closest('.accordion-item');
           const answer = item.querySelector('.accordion__answer');
-          answer.classList.toggle('open');
+          const container = item.closest('[data-accordion-mode]');
+          const mode = container ? container.getAttribute('data-accordion-mode') : 'multiple';
+          
+          if (mode === 'single') {
+            const allItems = container.querySelectorAll('.accordion-item');
+            allItems.forEach(i => {
+              const a = i.querySelector('.accordion__answer');
+              if (a !== answer) a.classList.remove('open');
+            });
+            answer.classList.toggle('open');
+          } else {
+            answer.classList.toggle('open');
+          }
+        });
+      });
+    },
+    
+    /**
+     * Native Details Accordion
+     */
+    initDetailsAccordion: function() {
+      document.querySelectorAll('details.details-faq').forEach(details => {
+        details.addEventListener('toggle', function() {
+          if (this.open) {
+            const container = this.closest('[data-accordion-mode]');
+            const mode = container ? container.getAttribute('data-accordion-mode') : 'multiple';
+            
+            if (mode === 'single') {
+              const all = container.querySelectorAll('details.details-faq[open]');
+              all.forEach(d => {
+                if (d !== this) d.removeAttribute('open');
+              });
+            }
+          }
         });
       });
     },
