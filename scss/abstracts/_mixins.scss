@@ -37,7 +37,11 @@
     @each $key, $value in $values {
       $class-name: $prefix;
       @if $key != 'default' {
-        $class-name: '#{$prefix}-#{$key}';
+        @if $prefix == '' {
+          $class-name: #{$key};
+        } @else {
+          $class-name: '#{$prefix}-#{$key}';
+        }
       }
       
       .#{$class-name} {
@@ -118,7 +122,11 @@
       @each $key, $value in $values {
         $class-name: $prefix;
         @if $key != 'default' {
-          $class-name: '#{$prefix}-#{$key}';
+          @if $prefix == '' {
+            $class-name: #{$key};
+          } @else {
+            $class-name: '#{$prefix}-#{$key}';
+          }
         }
         
         // Escape the colon for CSS validity

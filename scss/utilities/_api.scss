@@ -319,6 +319,19 @@ $utilities: (
     'states': true
   ),
   
+  'text-decoration-style': (
+    'prefix': 'underline',
+    'values': (
+      'solid': solid,
+      'double': double,
+      'dotted': dotted,
+      'dashed': dashed,
+      'wavy': wavy
+    ),
+    'responsive': false,
+    'states': true
+  ),
+  
   // ==========================================================================
   // EFFECTS
   // ==========================================================================
