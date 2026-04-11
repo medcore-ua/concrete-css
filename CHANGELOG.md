@@ -21,10 +21,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.3.0] - 2026-04-11
+
+### Added
+- Accordion single mode: add `data-accordion-mode="single"` on container to close other items when one opens
+- Unified accordion utility classes: `.accordion-trigger`, `.accordion-content`, `.accordion-icon`
+- `.accordion` and `.accordion-item` wrapper classes with consistent styling
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+---
+
 ## [1.2.0] - 2026-04-11
 
 ### Added
-- `details-faq` component for native HTML FAQ accordion
 - `text-decoration-style` utilities (solid, double, dotted, dashed, wavy)
 - Bug fix for empty prefix in utility generator
 
@@ -60,6 +78,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Complete documentation
 - HTML examples
 
-[Unreleased]: https://github.com/medcore-ua/concrete-css/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/medcore-ua/concrete-css/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/medcore-ua/concrete-css/releases/tag/v1.3.0
 [1.2.0]: https://github.com/medcore-ua/concrete-css/releases/tag/v1.2.0
 [1.0.0]: https://github.com/medcore-ua/concrete-css/releases/tag/v1.0.0

@@ -1,6 +1,6 @@
 {
   "name": "@medcore-ua/concrete-css",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "A utility-first CSS framework for brutalist and minimalist interfaces.",
   "main": "dist/concrete.css",
   "sass": "scss/main.scss",
