@@ -8,13 +8,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Initial framework structure
-- Core utility classes
-- Responsive breakpoint system
-- State modifiers (hover, focus)
-- Comprehensive documentation
-- Migration guide
-- Example implementations
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+---
+
+## [1.2.0] - 2026-04-11
+
+### Added
+- `details-faq` component for native HTML FAQ accordion
+- `text-decoration-style` utilities (solid, double, dotted, dashed, wavy)
+- Bug fix for empty prefix in utility generator
 
 ### Changed
 
@@ -48,5 +60,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Complete documentation
 - HTML examples
 
-[Unreleased]: https://github.com/yourusername/concrete-css/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/yourusername/concrete-css/releases/tag/v1.0.0
+[Unreleased]: https://github.com/medcore-ua/concrete-css/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/medcore-ua/concrete-css/releases/tag/v1.2.0
+[1.0.0]: https://github.com/medcore-ua/concrete-css/releases/tag/v1.0.0
