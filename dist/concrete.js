@@ -124,11 +124,6 @@
     }
   };
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => Concrete.init());
-  } else {
-    Concrete.init();
-  }
-
+  Concrete.init();
   window.Concrete = Concrete;
 })();
