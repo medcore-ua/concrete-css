@@ -12,12 +12,16 @@
     "README.md"
   ],
   "scripts": {
-    "build": "npx sass scss/main.scss dist/concrete.css --style=expanded",
-    "build:min": "npx sass scss/main.scss dist/concrete.min.css --style=compressed",
+    "build": "npm run build:css && npm run build:js",
+    "build:min": "npm run build:css:min && npm run build:js:min",
     "watch": "npx sass scss/main.scss dist/concrete.css --watch",
     "dev": "npm run watch",
     "lint": "stylelint 'scss/**/*.scss'",
-    "test": "echo \"Tests coming soon\" && exit 0"
+    "test": "echo \"Tests coming soon\" && exit 0",
+    "build:js": "esbuild js/index.js --bundle --outfile=dist/concrete.js",
+    "build:js:min": "esbuild js/index.js --bundle --minify --outfile=dist/concrete.min.js",
+    "build:css": "npx sass scss/main.scss dist/concrete.css --style=expanded",
+    "build:css:min": "npx sass scss/main.scss dist/concrete.min.css --style=compressed"
   },
   "repository": {
     "type": "git",
@@ -40,6 +44,7 @@
   },
   "homepage": "https://github.com/medcore-ua/concrete-css#readme",
   "devDependencies": {
+    "esbuild": "^0.28.2",
     "sass": "^1.69.0",
     "stylelint": "^17.4.0",
     "stylelint-config-standard-scss": "^17.0.0"
