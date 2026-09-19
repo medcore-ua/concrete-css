@@ -52,3 +52,11 @@
   border-color: $color-error;
   color: $color-error;
 }
+
+.#{$prefix}btn--inverted {
+  border-color: $color-white;
+
+  &:active {
+    box-shadow: -2px -2px 0 $color-white;
+  }
+}
