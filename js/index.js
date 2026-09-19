@@ -17,7 +17,11 @@ const Concrete = {
 
 // Initialize by default when loaded in a browser
 if (typeof window !== 'undefined') {
-  Concrete.init();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => Concrete.init());
+  } else {
+    Concrete.init();
+  }
   window.Concrete = Concrete;
 }
 
