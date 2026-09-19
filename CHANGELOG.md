@@ -21,6 +21,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.4.1] - 2026-09-19
+
+### Changed
+- Refactored JavaScript architecture into modular ES6
+- Replaced manual JS concatenation with `esbuild` bundler
+- Moved JS source of truth from `dist/` to dedicated `js/` directory
+
+### Fixed
+
+### Security
+
+---
+
 ## [1.4.0] - 2026-09-19
 
 ### Added
@@ -106,7 +119,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Complete documentation
 - HTML examples
 
-[Unreleased]: https://github.com/medcore-ua/concrete-css/compare/v1.4.0...HEAD
+[Unreleased]: https://github.com/medcore-ua/concrete-css/compare/v1.4.1...HEAD
+[1.4.1]: https://github.com/medcore-ua/concrete-css/releases/tag/v1.4.1
 [1.4.0]: https://github.com/medcore-ua/concrete-css/releases/tag/v1.4.0
 [1.3.0]: https://github.com/medcore-ua/concrete-css/releases/tag/v1.3.0
 [1.2.0]: https://github.com/medcore-ua/concrete-css/releases/tag/v1.2.0
