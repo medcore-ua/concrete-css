@@ -26,6 +26,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Restored `DOMContentLoaded` check in JavaScript initialization to ensure components (like mobile navigation) attach event listeners only after the DOM is fully constructed.
 
+### Security
+- Resolved npm audit vulnerabilities by updating transitive dev dependencies (`ajv`, `fast-uri`, `immutable`, `js-yaml`, `picomatch`).
+
 ---
 
 ## [1.4.1] - 2026-09-19
